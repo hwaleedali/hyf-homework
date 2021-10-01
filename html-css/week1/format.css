@@ -1,0 +1,59 @@
+
+/*Design of whole body with different refrences-resouces */
+body{
+    background-color:beige;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    margin-top: 25px;
+    border-bottom-style: dashed;
+    color:gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*Class for header design */
+.hf-color {
+    line-height: 20px;
+    margin-left: 0px;
+    background-color:bisque;
+    height: 150px;
+    padding-left: 10px;  
+}
+*{
+    line-height: 20px;
+}
+/* Place image on right side */
+.design-pic img {
+    width: 150px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: right;
+}
+.box p{
+    line-height: 20px;
+    margin-left: 20px;
+    
+}
+h1,h2,h3 {
+    margin-left: 10px;
+    color: tomato;
+    font-style: italic;
+    text-decoration: underline;
+}
+.date-align {
+    width: 150px;
+    margin-top: 0px;
+    margin-left: 10px;
+    float: right;
+    font-weight: bold;
+}
+/* Use of 2 differernt classes together*/
+.hf-color,.date-align {
+    color: tomato; 
+}
+
+/* Psudeo Class practice which changes text in header*/
+.design-pic:first-child {
+    color: tomato;
+    font-weight: bold;
+    }
