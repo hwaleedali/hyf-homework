@@ -147,15 +147,20 @@ body{
     }
     .nav{
     display: block;
-    width: 310px;
-    margin: 0px; 
+    margin: 0px 0px 10px; 
     font-size: 16px;
     background-color:#fafad2;
   }
   .nav a{
     text-decoration: none;
     color: #0000ff;
+    padding-bottom: 15px;
   }
+  
+  .nav a:hover {
+    display: flex;
+    width: 80px;  
+}
   .img-banner img{
     width: 480px;
   }
@@ -188,17 +193,17 @@ body{
   .logo-position a{
     display: block;
     justify-content: left;
+    width: 40px;
   }
   .logo-position img{
-    width:100px;
+    width:40px;
     margin: 0px 5px 30px;
   }
   .logo-position img{
-    width: 70px;
+    width: 50px;
     height: auto;
     transition: width 1s;
-  }
-  
+  }  
   .logo-position img:hover {
     width: 20px;
   }
