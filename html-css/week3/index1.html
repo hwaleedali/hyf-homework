@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Web Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="format.css">
+</head>
+
+<body>
+  <div class="header">
+    <img src="2017AwayCostumesDancers620x467.jpg" alt="Image of Logo">
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="file:///Users/waleedalibutt/Documents/HYF-class20/assignment-week3/index1.html#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Pages</a></li>
+      </ul>
+  </div>
+  <div class="font-style">
+    <h1>Sign up to yourcustomtailor.com </h1>
+    <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>&nbsp;
+    <p> Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy 
+        picking the best offers that match your preferences and style. Every week we will send you a
+        hand-picked selection- we just need to know a few details about your first...</p>
+  </div>
+  <div class="font-style">
+    <h2>Step 1/4- tell us who you are? </h2>
+  </div>
+    <div class="progress">
+      <div class="progress-fill"> 
+      </div>
+      <div class="prog-p">
+        <p>Nice to meet you. Let's spend a minutr to get to know each other? Please enter the following:</p>
+      </div>
+    </div>
+    <form action="file:///Users/waleedalibutt/Documents/HYF-class20/assignment-week3/index2.html" method="get">
+
+        <div class="label-1">
+          <label for="f-name">First Name*:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" name="text" pattern="[[A-Za-z]{1,32}" title="Please write only text" required>
+          <label for="l-name">Last Name*:</label>&nbsp;
+          <input type="text" name="text" pattern="[[A-Za-z]{1,32}" title="Please write only text" required>
+        </div>
+        <div class="label-2">
+          <label for="country">Country*:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="country" id="country-name" required>
+          <option>Albania</option>
+          <option>Bolivia</option>
+          <option>Colombia</option>
+          <option selected>Denmark</option>
+          <option>Egypt</option>
+        </select>
+        </div>
+        <div class="label-1">
+          <label for="f-name">Street Address*:</label>&nbsp;
+          <input type="text" name="text" pattern="^[#.0-9a-zA-Z\s,-]+$" title="Please fill this field" required>
+          <label for="number">Post Code*:</label>&nbsp;
+          <input type="number" id="number" name="number" maxlength="4" pattern="[-+]?[0-9]" title="Write 4 Digit Code" required>
+        </div>
+        <div class="label-3">
+          <label for="textarea">Profile Description:<br> &nbsp;
+          <p id="p-font">Please provide a short <br>description of yourself to be <br>displayed on our social <br>community pages.
+          </p></label>&nbsp;
+        
+        <textarea id="text" name="text" rows="4" cols="50" title="Maximum 500 character" maxlength="500">
+        </textarea>
+        </div>
+      </div>
+      <div class="font-style">
+        <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+      </div>
+      <div class="button">
+        <label for="vehicle1"> Shipping:</label>
+        <input type="checkbox" id="shipping" name="shipiing" value="shipping" checked="checked">
+  
+        <button>
+          Next Step
+        </button>
+      </form>
+      </div>
+</body>  
+</html>

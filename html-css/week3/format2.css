@@ -1,0 +1,116 @@
+body{
+    font-family:'Times New Roman', Times, serif;
+    border-style: solid;
+    margin: 20px 80px 40px 40px;
+    padding-bottom: 100px;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header2{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 5px 10px 0px ;
+    padding:10px 5px 10px 0px  ;
+    background-color:lightblue;
+    width: 99.61%;
+}
+.header2 img{
+    padding: 25px 20px 25px 0px;
+    width: 150px;
+    position: relative;
+    left: 0%;
+}
+.nav-bar2 ul{
+    margin:0px ;
+    padding: 0px ;
+    text-decoration: none;
+    list-style: none;
+}
+.nav-bar2 li{
+    display: inline-block;
+}
+.nav-bar2 a{
+    text-decoration: none;
+    color: black;
+    width: 50px;
+    display: block;
+    padding: 25px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.nav-bar2 a:hover{
+    background:lemonchiffon;
+    height: 5px;
+}
+.font-style2 h1,h2,h3,h4{
+    margin: 10px 0px 15px 15px;
+}
+.font-style2 p{
+    margin: 10px 0px 15px 15px;
+}
+.progress{
+    width: 90%;
+    height: 30px;
+    background-color:lightblue;
+    margin: 10px 0px 15px 15px;
+    border-radius: 5px;
+}
+.progress-fill{
+    width: 25%;
+    height: 100%;
+    background-color:gray
+}
+.prog-p{
+    margin: 10px 0px 15px 5px; 
+}
+.label-1{
+    padding:30px 5px 20px 50px;
+    
+}
+.label-2{
+    padding: 0px 5px 20px 50px;
+    
+}
+.label-p{
+    padding: 0px 0px 20px 10px;
+}
+.paragraph{
+    padding: 0px 0px 20px 10px;
+}
+.button {
+    padding: 0px 5px 20px 50px;
+}
+.click{
+    position: absolute;
+    right:20%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.click button{
+    text-decoration: none;
+    color: gray;
+    width: 100px;
+    height: 40px;
+    background-color: lightblue;
+    font-size: 18px;
+
+}
+.click button:hover{
+    background:#fffacd;
+}
+@media screen and (max-width: 600px){
+.label-1 label,input{
+    display: flex;
+    flex-direction: column;  
+}
+.label-p{
+    margin: 0px 40px;
+}
+.button label{
+    display: flex;
+    
+}
+
+}
