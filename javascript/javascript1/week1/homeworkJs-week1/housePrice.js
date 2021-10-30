@@ -26,7 +26,7 @@ let housePrice2 = volumeInMeters2 * 2.5 * 1000 + gardenSize2 * 300;
 if (housePrice2 >= houseCost2){
     console.log(`House price is ${housePrice2} ,Julia is paying too much for house.`)
 }else if(housePrice2 === houseCost2){
-    console.log(`House price is ${housePrice1} ,Julia is paying Right Amount for house.`)
+    console.log(`House price is ${housePrice2} ,Julia is paying Right Amount for house.`)
 }
 else {
     console.log(`House price is ${housePrice2} ,Julia is paying too little for house.`)
