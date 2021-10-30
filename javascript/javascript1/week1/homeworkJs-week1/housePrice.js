@@ -10,6 +10,8 @@ const volumeInMeters1 = houseWidth1 * houseDepth1 * houseHeight1;
 let housePrice1 = volumeInMeters1 * 2.5 * 1000 + gardenSize1 * 300;
 if (housePrice1 >= houseCost1){
     console.log(`House price is ${housePrice1} ,Peter is paying too much for house.`)
+}else if(housePrice1 === houseCost1){
+    console.log(`House price is ${housePrice1} ,Peter is paying Right Amount for house.`)
 }else {
     console.log(`House price is ${housePrice1} ,Peter is paying too little for house.`)
 }
@@ -23,7 +25,10 @@ let housePrice2 = volumeInMeters2 * 2.5 * 1000 + gardenSize2 * 300;
 
 if (housePrice2 >= houseCost2){
     console.log(`House price is ${housePrice2} ,Julia is paying too much for house.`)
-}else {
+}else if(housePrice2 === houseCost2){
+    console.log(`House price is ${housePrice1} ,Julia is paying Right Amount for house.`)
+}
+else {
     console.log(`House price is ${housePrice2} ,Julia is paying too little for house.`)
 
 }
