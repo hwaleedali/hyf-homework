@@ -2,7 +2,7 @@ console.log('Full Name on Ticket')
 
 function getFullname (firstname,surname,useFormalName){
     
-    if( useFormalName === true){
+    if( useFormalName){
       return 'Lord' +" "+ firstname +" "+ surname;
 }
         return firstname +" "+ surname;''

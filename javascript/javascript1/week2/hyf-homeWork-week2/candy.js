@@ -37,7 +37,7 @@ amounyToSpend = Math.random() * 100;
             return false;
     }    
         const value = canBuyMoreCandy(amounyToSpend)
-        if (value === true){
+        if (value){
             console.log('You can buy more, Please do it!!!')
         }else {
             console.log('NOOOOO, enough candy for you!')
