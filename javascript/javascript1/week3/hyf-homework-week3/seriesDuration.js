@@ -30,7 +30,7 @@ function logOutSeriesText(seriesDurations) {
         timeSpan = timeSpan + totalDays;
     });
     const seriesTime =  timeSpan / (80 * 365) * 100
-    console.log(`${seriesTime}% of my life has been spent on Series...`);
+    console.log(`${seriesTime.toFixed(3)}% of my life has been spent on Series...`);
  }
 
 logOutSeriesText(seriesDurations);
