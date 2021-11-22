@@ -1,11 +1,11 @@
 console.log('Voice Assistance')
 
-let nameAssistance=[]
- let todoList=[]
+const nameAssistance=[]
+ const todoList=[]
  function getReply(command) {   
 
     if(command.includes('What is my name')){
-        if (nameAssistance != "")
+        if (nameAssistance.length)
         console.log(`Your name is ${nameAssistance[0]}`)
       else
         console.log("Wait...I dont have your name") 
