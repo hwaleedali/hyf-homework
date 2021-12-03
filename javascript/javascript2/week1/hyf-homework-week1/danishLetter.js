@@ -8,14 +8,13 @@ function danishWordCount(){ // returns {total: 1, å: 1}
     let count2=''
 
     const danishLetter = danishString.split('')
-    const danishWords = ['æ','ø','å']
-for (let i = 0; i < danishLetter.length; i++){
+for (let i = 0; i < danishString.length; i++){
     
-       if(danishLetter[i] === 'æ'){
+       if(danishString[i] === 'æ'){
         count++;
-       }else if (danishLetter[i] === 'ø'){
+       }else if (danishString[i] === 'ø'){
         count1++;
-       }else if (danishLetter[i] === 'å'){
+       }else if (danishString[i] === 'å'){
         count2++;
        }      
 
@@ -34,14 +33,13 @@ function danishWordCount1(){ // returns {total: 1, å: 1}
     let count5= 0;
 
     const danishLetter1 = danishString2.split('')
-    const danishWords1 = ['æ','ø','å']
-for (let i = 0; i < danishLetter1.length; i++){
+for (let i = 0; i < danishString2.length; i++){
     
-       if(danishLetter1[i] === 'æ'){
+       if(danishString2[i] === 'æ'){
         count3++;
-       }else if (danishLetter1[i] === 'ø'){
+       }else if (danishString2[i] === 'ø'){
         count4++;
-       }else if (danishLetter1[i] === 'å'){
+       }else if (danishString2[i] === 'å'){
         count5++;
        }      
 
