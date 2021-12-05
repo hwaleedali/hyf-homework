@@ -31,10 +31,7 @@ inputProductName.addEventListener('input',function(){
     const productName = inputProductName.value.toLowerCase();
     const filteredItem = products.filter((product)=> product.name.toLowerCase().indexOf(productName) > -1)
     renderProducts(filteredItem)
-   
-})
-
-
+})                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 inputProductPrice.addEventListener('input',function(){
     const ProductPrice = inputProductPrice.value;
     const filteredPrice = products.filter((product)=> product.price < ProductPrice )
