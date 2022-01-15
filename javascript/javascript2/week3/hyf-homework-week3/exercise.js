@@ -45,6 +45,7 @@ const forSaturn= (() => {
     return callBack()
 }
 planetLogFunction(forEarth)
+
 function planetLogFunction(callBack){
     return callBack()
 }
@@ -80,12 +81,6 @@ buttonMap.addEventListener("click", function() {
 
 
 //                 // step 7
-function runAfterDelay(delay,callback){
-    setTimeout(() => {
-        return callback()
-    }, delay);
-}
-runAfterDelay(3000,forEarth)
 
 function runAfterDelay(delay,callback){
     setTimeout(() => {
