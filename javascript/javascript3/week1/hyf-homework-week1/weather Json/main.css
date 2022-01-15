@@ -1,0 +1,31 @@
+body {
+  background-image: url("weather.jpeg");
+
+  /* display: grid; */
+}
+#headerDesign {
+  text-align: center;
+  width: 100%;
+  padding-top: 50px;
+  color: burlywood;
+}
+#cityName {
+  text-align: center;
+}
+
+.designButton {
+  text-align: center;
+  width: 100%;
+  padding-top: 100px;
+}
+.designButton > h3 {
+  color: bisque;
+}
+.paraDesign {
+  text-align: center;
+  width: 100%;
+  padding-top: 50px;
+  color: aqua;
+  display: flex;
+  flex-direction: column;
+}
