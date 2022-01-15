@@ -1,0 +1,72 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  background-color: silver;
+}
+.headerDesign {
+  background-color: seagreen;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+
+  margin: 0px 40px 40px 0px;
+  padding: 20px 40px 40px 0px;
+}
+.gameScore {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  color: seagreen;
+  /* margin: 0px 40px 40px 200px; */
+}
+.inputValue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px 40px 10px 30px;
+}
+.button {
+  /* width: 150px;
+  height: 50px;
+  font-weight: bolder; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px 40px 20px 30px;
+  height: 30px;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+}
+#leftScore {
+  background-color: lightyellow;
+  height: 300px;
+  width: 200px;
+}
+#rightScore {
+  background-color: tan;
+  height: 300px;
+  width: 200px;
+}
+footer {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 10px;
+  background-color: seagreen;
+  font-weight: bold;
+}
+#return {
+  text-align: center;
+  color: seagreen;
+}
+main {
+  width: 100%;
+  height: 500px;
+}
