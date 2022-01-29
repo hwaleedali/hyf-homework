@@ -12,7 +12,7 @@ fetch(
     const badMovies = movies
       .filter((el) => el.rating <= 5)
       .filter((el) => el.year >= 2000);
-    console.log("Bad Movies:", badMovies);
+    console.log("Bad Movies & Movies After 2000:", badMovies);
   })
   .catch((er) => console.log(er));
 
@@ -22,7 +22,7 @@ fetch(
 
 async function solutionToProblem(resolveAfter) {
   const promise = await new Promise((resolve, reject) => {
-    setTimeout(() => resolve(), 3000);
+    setTimeout(() => resolve(), resolveAfter * 1000);
   });
 }
 
@@ -46,6 +46,9 @@ function getCurrentLocation() {
   return new Promise((resolve, reject) => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(resolve, reject);
+      resolve();
+    } else {
+      reject("Promised Rejected");
     }
   });
 }
