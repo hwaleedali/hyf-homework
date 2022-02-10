@@ -1,7 +1,7 @@
 console.log("Circle");
 
-let c = document.getElementById("myCanvas");
-let ctx = c.getContext("2d");
+const c = document.getElementById("myCanvas");
+const ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(100, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
@@ -18,8 +18,8 @@ class Circle {
       (this.fillColor = fillColor);
   }
   draw() {
-    let c = document.getElementById("myCanvas");
-    let ctx = c.getContext("2d");
+    const c = document.getElementById("myCanvas");
+    const ctx = c.getContext("2d");
     ctx.beginPath();
     ctx.arc(
       this.x,
@@ -72,7 +72,7 @@ const timeInterval = setInterval(() => {
       ".5" +
       ")";
 
-    let c2 = new Circle(randomX, randomY, 20, 0, 2 * Math.PI, color);
+    const c2 = new Circle(randomX, randomY, 20, 0, 2 * Math.PI, color);
     allCircles.push(c2);
     createCircle(allCircles[i]);
   }
