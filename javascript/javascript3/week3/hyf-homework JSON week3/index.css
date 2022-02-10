@@ -1,0 +1,12 @@
+body {
+  background-color: whitesmoke;
+  text-align: center;
+}
+.renderElement {
+  text-align: center;
+  color: tan;
+}
+#para {
+  color: tan;
+  text-align: center;
+}
