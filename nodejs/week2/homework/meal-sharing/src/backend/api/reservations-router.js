@@ -5,8 +5,6 @@ const reservations = require("./../data/reservations.json");
 
 router.get("/:id", async (request, response) => {
   try {
-    // console.log(meals);
-    // console.log("in /api/meals");
     const findId = reservations.find(
       (meal) => meal.id === Number(request.params.id)
     );
@@ -18,8 +16,6 @@ router.get("/:id", async (request, response) => {
 
 router.get("/", async (request, response) => {
   try {
-    console.log(reservations);
-    console.log("in /api/meals");
     response.json(reservations);
   } catch (error) {
     throw error;
