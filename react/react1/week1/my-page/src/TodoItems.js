@@ -1,9 +1,9 @@
 import React from "react";
-function TodoItem(props) {
+function TodoItem({ description, deadline }) {
   return (
     <li>
       <h3>
-        {props.description}: {props.deadline}
+        {description}: {deadline}
       </h3>
     </li>
   );

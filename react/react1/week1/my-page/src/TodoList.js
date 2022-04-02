@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItems from "./TodoItems";
 
-export function TodoList(props) {
+function TodoList(props) {
   return (
     <ul>
       {props.TodoData.map((user) => {
@@ -12,3 +12,4 @@ export function TodoList(props) {
     </ul>
   );
 }
+export default TodoList;
