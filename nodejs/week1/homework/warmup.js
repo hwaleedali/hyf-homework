@@ -1,4 +1,4 @@
-console.log("warmup file");
+console.log("Warmup File");
 class Circle {
   constructor(radius) {
     this.radius = radius;
@@ -10,7 +10,7 @@ class Circle {
     return this.radius * 2 * Math.PI;
   }
   getArea() {
-    return this.radius * this.radius * Math.PI;
+    return Math.pow(this.radius, 2) * Math.PI;
   }
 }
 const circle = new Circle(10);

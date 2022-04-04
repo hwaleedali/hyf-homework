@@ -8,18 +8,16 @@ const reviews = require("./data/reviews");
 
 // this is where you will be adding your routes
 app.get("/", async (request, response) => {
-  response.send("Application Result");
+  response.send("Meal Sharing Web App");
 });
 app.get("/meals", async (request, response) => {
-  // console.log(meals);
   const allMealWithReview = meals.map((meal) => {
-    const mealReview = reviews.filter((review) => meal.id === review.mealId);
+    const review = reviews.filter((reviews) => meal.id === reviews.mealId);
     return {
       ...meal,
-      review: mealReview,
+      reviews: review,
     };
   });
-  // console.log(allMealWithReview);
   response.json(allMealWithReview);
 });
 app.get("/cheap-meals", async (request, response) => {
@@ -52,11 +50,8 @@ app.get("/large-meals", async (request, response) => {
   response.json(allLargeMealWithReview);
 });
 app.get("/meal", async (request, response) => {
-  // console.log(randomFunction);
-  const mappedMeal = meals.map((meal) => meal);
-  // console.log(mappedMeal);
-  const randomFunction = Math.floor(Math.random() * mappedMeal.length);
-  const randomMeal = mappedMeal[randomFunction];
+  const randomFunction = Math.floor(Math.random() * meals.length);
+  const randomMeal = meals[randomFunction];
   console.log(randomMeal);
   const randomMealReview = reviews.filter(
     (review) => randomMeal.id === review.mealId
@@ -68,15 +63,11 @@ app.get("/meal", async (request, response) => {
   response.json(randomMealObj);
 });
 app.get("/reservations", async (request, response) => {
-  const allReservations = reservations.map((reservation) => reservation);
-
-  response.send(allReservations);
+  response.send(reservations);
 });
 app.get("/reservation", async (request, response) => {
-  const allRandomReservation = reservations.map((reservation) => reservation);
-
   const randomNumber = Math.floor(Math.random() * reservations.length);
-  const randomReservation = allRandomReservation[randomNumber];
+  const randomReservation = reservations[randomNumber];
   response.json(randomReservation);
 });
 

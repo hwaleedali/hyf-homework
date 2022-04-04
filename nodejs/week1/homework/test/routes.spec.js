@@ -20,10 +20,12 @@ describe("GET /meals", () => {
       meal.reviews = reviews.filter((review) => review.mealId === meal.id);
       return meal;
     });
+
     const response = await request(app).get("/meals");
     expect(response.statusCode).toBe(200);
     expect(response.body).toMatchObject(mealsWithReviews);
     expect(Array.isArray(response.body)).toBeTruthy();
+    console.log("-->", response.body);
   });
 });
 
