@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Indian food in the summer",
+    "maxNumberOfGuests": 5,
+    "description": "A nice night out eating delicious indian food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 67
+  },
+  {
+    "id": 2,
+    "title": "Sea food",
+    "maxNumberOfGuests": 12,
+    "description": "Eating delicious sea food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 89
+  },
+  {
+    "id": 3,
+    "title": "Pakistani food in the spring",
+    "maxNumberOfGuests": 15,
+    "description": "Delicater and fasinating food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 79
+  }
+]
