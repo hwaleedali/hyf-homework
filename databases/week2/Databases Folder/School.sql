@@ -1,3 +1,4 @@
+Create School;
 use School;
 CREATE TABLE `Class` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -13,6 +14,16 @@ CREATE TABLE `Student` (
   `class_id` int(10) unsigned NOT NULL,
   CONSTRAINT `fk_Class` FOREIGN KEY (`class_id`) REFERENCES `Class` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+select * from Class;
+
+ALTER TABLE
+  Class
+ADD
+  status ENUM('not-started', 'on-going', 'finished') NOT NULL;
+select
+  *
+from
+  Class;
 alter table
   `Class`
 add
@@ -35,3 +46,7 @@ VALUES
     "2020-02-04",
     "Finished"
   );
+select
+  *
+from
+  Class;
