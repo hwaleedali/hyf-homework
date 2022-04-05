@@ -25,7 +25,6 @@ VALUES(
     90,
     '2022-02-15'
   );
- 
 -- Get a meal with any id, fx 1
 SELECT
   -- meal.title
@@ -34,25 +33,28 @@ FROM
   meal
 WHERE
   id = 1;
- 
 -- Update a meal with any id, fx 1. Update any attribute fx the title or multiple attributes
 UPDATE
   meal
 SET
   meal.description = 'Classic food'
 WHERE
-id = 3;
-  
+  id = 3;
 -- Delete a meal with any id, fx 1
 DELETE FROM
   meal
 WHERE
   id = 2;
-   select * from meal;
+select
+  *
+from
+  meal;
 -- Quries to write on Reservation table
   -- Get all reservations
-select * from reservation;
-
+select
+  *
+from
+  reservation;
 -- Add a new reservation
 INSERT INTO
   reservation(
@@ -78,7 +80,6 @@ from
   reservation
 where
   id = 1;
-
 -- Update a reservation with any id, fx 1. Update any attribute fx the title or multiple attributes
 UPDATE
   reservation
@@ -86,7 +87,10 @@ SET
   contact_phonenumber = '71815074'
 WHERE
   meal_id = 3;
-  select * from reservation;
+select
+  *
+from
+  reservation;
 -- Delete a reservation with any id, fx 1
 DELETE FROM
   reservation
@@ -94,7 +98,7 @@ WHERE
   meal_id = 1;
 -- Quries to write on Review table
 SELECT
-*
+  *
 from
   review;
 -- Add a new review
@@ -113,7 +117,10 @@ VALUES(
     '2022-02-26',
     3
   );
-  select * from review;
+select
+  *
+from
+  review;
 -- Get a review with any id, fx 1
 SELECT
   *
@@ -143,19 +150,25 @@ from
 WHERE
   price < 90;
 -- Get meals that still has available reservations
-  
--- SELECT
---   meal.title,
---   max_reservations,
---   number_of_guests,
---   (max_reservations - number_of_guests) as 'Available Reservations'
--- from
---   meal
---   JOIN reservation on meal.id = reservation.meal_id
--- WHERE
---   reservation.number_of_guests < meal.max_reservations;
-  
-  -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
+SELECT
+  meal.title AS Meal,
+  meal.max_reservations AS Capacity,
+  SUM(reservation.number_of_guests) AS 'Total Order',
+  meal.max_reservations - sum(reservation.number_of_guests) as Avaliable,
+  reservation.created_date AS 'Reserved Date'
+FROM
+  meal
+  JOIN reservation ON reservation.meal_id = meal.id
+GROUP BY
+  reservation.meal_id,
+  reservation.created_date
+HAVING
+  (
+    meal.max_reservations - sum(reservation.number_of_guests)
+  ) > -1
+ORDER BY
+  reservation.created_date DESC;
+-- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 SELECT
   meal.title
 from
@@ -169,16 +182,12 @@ SELECT
 FROM
   meal
 WHERE
-  created_date > '2022-02-14' && created_date < '2022-02-16';
+  created_date > '2022-02-14' & & created_date < '2022-02-16';
 -- Get only specific number of meals fx return only 5 meals
 SELECT
   meal.title
 from
   meal
-where
-  price < 90
-ORDER BY
-  meal.title ASC
 LIMIT
   5;
 -- Get the meals that have good reviews
@@ -210,4 +219,6 @@ from
   meal
   join review on meal.id = review.meal_id
 group BY
-  meal.title;
+  meal.title
+ORDER BY
+  AVG(review.stars);
