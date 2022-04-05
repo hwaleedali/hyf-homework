@@ -1,5 +1,4 @@
-CREATE DATABASE hyf_lesson3_mealsharing
-DEFAULT CHARACTER SET = 'utf8mb4';
+CREATE DATABASE hyf_lesson3_mealsharing DEFAULT CHARACTER SET = 'utf8mb4';
 USE hyf_lesson3_mealsharing;
 CREATE TABLE `meal` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -19,7 +18,9 @@ CREATE TABLE `reservation` (
   `contact_name` VARCHAR(255) NOT NULL,
   `contact_email` VARCHAR(255) NOT NULL,
   `meal_id` INT(10) UNSIGNED NOT NULL,
-  CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE
+  SET
+    NULL ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 CREATE TABLE `review` (
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
