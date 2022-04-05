@@ -18,10 +18,7 @@ VALUES
     "2022-06-01",
     1
   );
-select
-  *
-from
-  task;
+  select * from task;
 UPDATE
   task
 SET
@@ -73,26 +70,13 @@ WHERE
   user.name = "Donald Duck"
   AND status.name = "Not started";
 SELECT
-  user.name,
-  COUNT(task.id)
+user.name,task.title
 FROM
   task
   JOIN user_task ON task.id = user_task.task_id
   JOIN user ON user.id = user_task.user_id
-WHERE
-  user.name = "Maryrose Meadows"
-GROUP BY
-  month(task.created) = 9;
-SELECT
-  count(task.id)
-FROM
-  task
-GROUP BY
-  month(created);
+  WHERE user.name = "Maryrose Meadows";
+  
+  SELECT task.title FROM task GROUP BY month(created);
 -- changed the created of id = 35 to 11th month
-UPDATE
-  task
-SET
-  created = "2022-11-01"
-WHERE
-  id = 35;
+ UPDATE task SET created = "2022-11-01"  WHERE  id = 35;
