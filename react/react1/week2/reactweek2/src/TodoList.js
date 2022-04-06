@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TodoItem } from "./TodoItem";
 import "./App.css";
 
 const todos = [
@@ -52,35 +53,7 @@ export function TodoList() {
     ]);
     return RandomTodoAddition;
   }
-  const TodoItems = useTodo.map((todo) => (
-    <TodoItem
-      text={todo.description}
-      checked={todo.checked}
-      id={todo.id}
-      key={todo.id}
-    ></TodoItem>
-  ));
-
-  function TodoItem({ text, checked, id }) {
-    return (
-      <li className="lineThrough">
-        <span className={checked ? "checked" : "unchecked"}>
-          {text}
-          {todos.description}
-        </span>
-        <input
-          type="checkbox"
-          // checked={() => console.log("gg")}
-          value={checked}
-          onChange={() => StrikeTodo(id)}
-          // checked={todos.done}
-        ></input>
-
-        <button onClick={() => deleteTodo(id)}> Delete </button>
-      </li>
-    );
-  }
-  const StrikeTodo = (id) => {
+  const strikeTodo = (id) => {
     var strikeList = [...useTodo];
     strikeList.forEach((item) => {
       if (item.id === id) {
@@ -89,6 +62,17 @@ export function TodoList() {
     });
     setUseTodo(strikeList);
   };
+  const TodoItems = useTodo.map((todo) => (
+    <TodoItem
+      text={todo.description}
+      checked={todo.checked}
+      id={todo.id}
+      key={todo.id}
+      strikeTodo={strikeTodo}
+      deleteTodo={deleteTodo}
+    ></TodoItem>
+  ));
+
   function deleteTodo(id) {
     return setUseTodo((prevTodos) => {
       let dataItems = prevTodos.filter((item) => item.id != id);
