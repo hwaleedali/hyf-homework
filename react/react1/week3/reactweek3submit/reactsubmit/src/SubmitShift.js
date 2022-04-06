@@ -2,60 +2,62 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { ViewShift } from "./ViewShift";
 function SubmitShift() {
-  const [inputShift, setInputShift] = useState([
-    { id: 1, name: "Suman", startTime: "3:20", endTime: "12:33" },
-    { id: 2, name: "Chunmei", startTime: "15:20", endTime: "21:49" },
-  ]);
+  const [inputShift, setInputShift] = useState([]);
   const [name, setName] = useState("");
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
-  //fetch part not working for me.
-  // useEffect(() => {
-  //   if (setInputShift) {
-  //     fetch(
-  //       "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw"
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         const fetchMap = data.map((data) => ({
-  //           name: data.name,
-  //           startTime: data.startTime,
-  //           endTime: data.endTime,
-  //         }));
-  //         setInputShift((prev) => [...prev, ...fetchMap]);
-  //       });
-  //   }
-  // }, [setInputShift]);
+  const Api =
+    "https://gist.githubusercontent.com/benna100/5fd674171ea528d7cd1d504e9bb0ca6f/raw";
+  useEffect(() => {
+    if (setInputShift) {
+      fetch(Api)
+        .then((res) => res.json())
+        .then((data) => {
+          const fetchMap = data.map((data) => ({
+            name: data.name,
+            start: data.start.split("T")[1],
+            end: data.end.split("T")[1],
+          }));
+          setInputShift(fetchMap);
+        });
+    }
+  }, [setInputShift]);
 
   function addShift() {
-    let newId;
-    if (inputShift.length === 0) {
-      newId = 1;
-    } else {
-      newId = inputShift[inputShift.length - 1].id + 1;
-    }
-    const addedShift = [...inputShift, { id: newId, name, startTime, endTime }];
+    // let newId;
+    // if (inputShift.length === 0) {
+    //   newId = 1;
+    // } else {
+    //   newId = inputShift[inputShift.length - 1].id + 1;
+    // }
+    const id = inputShift.length === 0 ? 1 : inputShift.length + 1;
+
+    const addedShift = [
+      ...inputShift,
+      { id: id, name: name, start: start, end: end },
+    ];
+    console.log(addedShift);
     setInputShift(addedShift);
   }
-
-  function deleteShift(id) {
+  function deleteShift(name) {
     setInputShift((shifts) => {
-      const shiftsAfterDelete = shifts.filter((shift) => shift.id !== id);
+      const shiftsAfterDelete = shifts.filter((shift) => shift.name !== name);
       return shiftsAfterDelete;
     });
   }
 
   const todoValues = inputShift
     .filter((val) => val.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    .map((item) => {
+    .map((item, index) => {
       return (
         <ViewShift
           name={item.name}
-          startTime={item.startTime}
-          endTime={item.endTime}
-          key={item.id}
+          start={item.start}
+          end={item.end}
+          key={index}
           id={item.id}
           deleteShift={deleteShift}
         />
@@ -74,13 +76,13 @@ function SubmitShift() {
         Start Time:
         <input
           type="time"
-          onChange={(e) => setStartTime(e.target.value)}
+          onChange={(e) => setStart(e.target.value)}
           placeholder="Start Time"
         />
         End Time:
         <input
           type="time"
-          onChange={(e) => setEndTime(e.target.value)}
+          onChange={(e) => setEnd(e.target.value)}
           placeholder="End Time"
         />
         <button

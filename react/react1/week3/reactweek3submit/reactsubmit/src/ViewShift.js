@@ -5,22 +5,21 @@ import FancyBorder from "./FancyBorder";
 export function ViewShift({
   id,
   name,
-  startTime,
-  endTime,
+  start,
+  end,
   deleteShift,
   searchName,
   searchStart,
   searchEnd,
 }) {
-  const endHoursToMinutes = endTime.split(":");
-  const totalEndMinutes =
-    Number(endHoursToMinutes[0]) * 60 + Number(endHoursToMinutes[1]);
-  const startHoursToMinutes = startTime.split(":");
+  const endMinutes = end.split(":");
+  const totalEndMinutes = Number(endMinutes[0]) * 60 + Number(endMinutes[1]);
+  const startMinutes = start.split(":");
   const totalStartMinutes =
-    Number(startHoursToMinutes[0]) * 60 + Number(startHoursToMinutes[1]);
-  const workingMinutes = totalEndMinutes - totalStartMinutes;
-  const hours = Math.floor(workingMinutes / 60);
-  const minutes = workingMinutes % 60;
+    Number(startMinutes[0]) * 60 + Number(startMinutes[1]);
+  const actualMinutes = totalEndMinutes - totalStartMinutes;
+  const hours = Math.floor(actualMinutes / 60);
+  const minutes = actualMinutes % 60;
   const total = hours + ":" + minutes;
   console.log(total);
   return (
@@ -36,19 +35,19 @@ export function ViewShift({
           </li>
           <li>
             <strong>Start-Time:</strong>
-            {startTime}
+            {start}
           </li>
           <li>
-            <strong>End-Time:</strong> {endTime}
+            <strong>End-Time:</strong> {end}
           </li>
           <li>
             <strong>Hours:</strong> {total}
           </li>
           <li>
-            <strong>Price:</strong> {(150 * workingMinutes) / 60}
+            <strong>Price:</strong> {(150 * actualMinutes) / 60}
           </li>
           <li>
-            <button onClick={() => deleteShift(id)}>Delete shift</button>
+            <button onClick={() => deleteShift(name)}>Delete shift</button>
           </li>
         </ul>
       </FancyBorder>

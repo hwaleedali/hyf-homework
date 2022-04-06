@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import TodoItem from "./TodoItem";
-// import { DataFetching } from "./DataFetching";
 
 export function TodoList() {
   const [useTodo, setUseTodo] = useState([]);
@@ -13,32 +12,27 @@ export function TodoList() {
       fetch(Api)
         .then((res) => res.json())
         .then((data) => {
-          const fetchMap = data.map((data) => ({
-            id: data.id,
-            description: data.description,
-            deadline: data.deadline,
-          }));
-
-          setUseTodo((prev) => [...prev, ...fetchMap]);
+          setUseTodo(data);
         });
     }
   }, [setUseTodo]);
 
   // for add State
   function addTodo() {
-    let addID;
-    if (useTodo.length === 0) {
-      addID = 1;
-    } else {
-      addID = useTodo[useTodo.length - 1].id + 1;
-    }
-    const randomTodo = {
-      id: addID,
+    // let addID;
+    // if (useTodo.length === 0) {
+    //   addID = 1;
+    // } else {
+    //   addID = useTodo[useTodo.length - 1].id + 1;
+    // }
+    const id = useTodo.length === 0 ? 1 : useTodo[useTodo.length - 1].id + 1;
+    const newTodo = {
+      id: id,
       description: description,
       deadline: deadline,
     };
-    console.log(randomTodo);
-    setUseTodo((prev) => [...prev, randomTodo]);
+    console.log(newTodo);
+    setUseTodo((prev) => [...prev, newTodo]);
   }
 
   const todoValues = useTodo.map((item) => {
@@ -56,12 +50,11 @@ export function TodoList() {
   // for Delete State
 
   function deleteTodo(id) {
-    return setUseTodo((prevTodos) => {
+    setUseTodo((prevTodos) => {
       let dataItems = prevTodos.filter((item) => item.id != id);
       return dataItems;
     });
   }
-
   // for Edit and Update State
   function editTodo(id, description) {
     console.log(id, description);
@@ -96,7 +89,6 @@ export function TodoList() {
         Add todo{" "}
       </button>
       {todoValues}
-      {/* <DataFetching setUseTodo={setUseTodo} /> */}
     </div>
   );
 }
