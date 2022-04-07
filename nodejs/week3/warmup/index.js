@@ -25,6 +25,7 @@ app.get("/calculator", (req, res) => {
         res.json(result);
       }
     }
+
     if ("subtraction" in req.query) {
       if (Array.isArray(secondParam)) {
         result =
@@ -67,5 +68,41 @@ app.get("/calculator", (req, res) => {
       }
     }
   }
+});
+app.post("/addition", (req, res) => {
+  const first = Number(req.body.firstParam);
+  const second = Number(req.body.secondParam);
+  const result = first + second;
+  if (!result) {
+    res.send(" please write  a number");
+  }
+  res.json(result);
+});
+app.post("/substraction", (req, res) => {
+  const firstParam = Number(req.body.firstParam);
+  const secondParam = Number(req.body.secondParam);
+  const result = firstParam - secondParam;
+  if (!result) {
+    res.send(" please write  a number");
+  }
+  res.json(result);
+});
+app.post("/multiplication", (req, res) => {
+  const firstParam = Number(req.body.firstParam);
+  const secondParam = Number(req.body.secondParam);
+  const result = firstParam * secondParam;
+  if (!result) {
+    res.send(" please write  a number");
+  }
+  res.json(result);
+});
+app.post("/division", (req, res) => {
+  const firstParam = Number(req.body.firstParam);
+  const secondParam = Number(req.body.secondParam);
+  const result = firstParam / secondParam;
+  if (!result) {
+    res.send(" please write  a number");
+  }
+  res.json(result);
 });
 app.listen(3000, () => console.log(`Calculator:listening on port 3000`));
